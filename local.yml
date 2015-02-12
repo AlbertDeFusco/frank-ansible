@@ -1,8 +1,16 @@
 ---
-- hosts: 127.0.0.1
+- hosts: compute
   user: root
   connection: local
   tasks:
     - yum:
         name="gnuplot"
+        state=installed
+
+- hosts: login
+  user: root
+  connection: local
+  tasks:
+    - yum:
+        name="mysql"
         state=installed
