@@ -1,5 +1,2 @@
-[compute]
-n0
-
-[login]
-hpc
+[localhost]
+127.0.0.1
