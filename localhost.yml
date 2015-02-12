@@ -1,0 +1,7 @@
+---
+- hosts: compute
+  user: root
+  tasks:
+    - yum:
+        name="gnuplot"
+        state=installed
