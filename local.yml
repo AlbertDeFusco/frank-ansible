@@ -1,18 +1,46 @@
 ---
 
+- hosts: all
+  user: root
+  connection: local
+  tasks:
+    - name: yum packages
+      yum: pkg={{items}} state=installed
+      with_items:
+        - vim
+        - emacs
+        - gnuplot
+        - '@development'
+        - hwloc
+        - tig
+        - rdma
+        - libibverbs
+        - hwloc
+        - openldap
+        - openldap-clients
+        - nss-pam-ldapd
+        - pam_ldap
+        - nscd
+    - name: ldap auth
+      command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
+
 
 - hosts: compute
   user: root
   connection: local
   tasks:
-    - yum:
-        name="vim"
-        state=installed
+    - name: yum packages
+      yum: pkg={{items}} state=installed
+      with_items:
+        - torque
+
 
 - hosts: login
   user: root
   connection: local
   tasks:
-    - yum:
-        name="mysql"
-        state=installed
+    - name: yum packages 
+      yum: pkg={{items}} state=installed
+      with_items:
+        - mysql
+        - mysql-server
