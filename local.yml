@@ -1,10 +1,12 @@
 ---
+
+
 - hosts: compute
   user: root
   connection: local
   tasks:
     - yum:
-        name="gnuplot"
+        name="vim"
         state=installed
 
 - hosts: login
