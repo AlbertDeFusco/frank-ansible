@@ -4,8 +4,8 @@
   user: root
   connection: local
   tasks:
-    - name: yum packages
-      yum: pkg={{items}} state=installed
+    - name: general yum packages
+      yum: pkg={{ item }} state=installed
       with_items:
         - vim
         - emacs
@@ -21,6 +21,7 @@
         - nss-pam-ldapd
         - pam_ldap
         - nscd
+
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
 
@@ -29,8 +30,8 @@
   user: root
   connection: local
   tasks:
-    - name: yum packages
-      yum: pkg={{items}} state=installed
+    - name: compute yum packages
+      yum: pkg={{ item }} state=installed
       with_items:
         - torque
 
@@ -39,8 +40,9 @@
   user: root
   connection: local
   tasks:
-    - name: yum packages 
-      yum: pkg={{items}} state=installed
+    - name: login yum packages 
+      yum: pkg={{ item }} state=installed
       with_items:
         - mysql
         - mysql-server
+        - tmux
