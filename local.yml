@@ -31,7 +31,7 @@
   user: root
   connection: local
   tasks:
-    - name: compute yum packages disable_gpg_check
+    - name: compute yum packages disable_gpg_check=true
       yum: pkg={{ item }} state=installed
       with_items:
         - torque
@@ -42,7 +42,7 @@
   connection: local
   tasks:
     - name: login yum packages 
-      yum: pkg={{ item }} state=installed disable_gpg_check
+      yum: pkg={{ item }} state=installed disable_gpg_check=true
       with_items:
         - mysql
         - mysql-server
