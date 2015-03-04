@@ -52,3 +52,4 @@
         - '@development'
         - tig
         - lua-devel
+        - man
