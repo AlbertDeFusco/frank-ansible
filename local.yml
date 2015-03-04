@@ -19,7 +19,7 @@
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
 
     - name: mount home
-      mount: name=/home src='head:/home' fstype=nfs state=mounted
+      mount: name=/home src='vault:/home' fstype=nfs state=mounted
 
 
 - hosts: compute
