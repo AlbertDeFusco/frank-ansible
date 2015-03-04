@@ -20,6 +20,8 @@
 
     - name: mount home
       mount: name=/home src='vault:/home' fstype=nfs state=mounted
+    - name: mount opt
+      mount: name=/opt src='vault:/opt' fstype=nfs state=mounted
 
 
 - hosts: compute
