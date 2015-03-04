@@ -50,3 +50,4 @@
         - tmux
         - '@development'
         - tig
+        - lua-devel
