@@ -15,6 +15,7 @@
         - nscd
         - authconfig
         - tcl
+        - lua
 
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
