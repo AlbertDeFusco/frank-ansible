@@ -17,6 +17,7 @@
         - tcl
         - lua
         - lua-posix
+        - lua-filesystem
 
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
