@@ -8,14 +8,6 @@
       yum: pkg={{ item }} state=installed disable_gpg_check=true
       with_items:
         - vim
-        - emacs
-        - gnuplot
-        - '@development'
-        - hwloc
-        - tig
-        - rdma
-        - libibverbs
-        - hwloc
         - openldap
         - openldap-clients
         - nss-pam-ldapd
@@ -25,6 +17,9 @@
 
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
+
+    - name: mount home
+      mount: name=/home src='head:/home' fstyp=nfs state=mounted
 
 
 - hosts: compute
@@ -47,3 +42,5 @@
         - mysql
         - mysql-server
         - tmux
+        - '@development'
+        - tig
