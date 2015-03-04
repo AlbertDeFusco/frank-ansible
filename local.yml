@@ -18,6 +18,7 @@
         - lua
         - lua-posix
         - lua-filesystem
+        - ipython
 
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
