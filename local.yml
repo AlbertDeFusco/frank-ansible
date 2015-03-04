@@ -19,6 +19,8 @@
         - lua-posix
         - lua-filesystem
         - ipython
+        - environment-modules
+        - cmake
 
     - name: ldap auth
       command: authconfig --enableldap --enableldapauth --ldapserver=ldap://ldap.localdomain:389/ --ldapbasedn="dc=localdomain" --enablecache --disablefingerprint --kickstart
